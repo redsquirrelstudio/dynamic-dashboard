@@ -14,10 +14,10 @@ dynamic widgets for your dashboard, customizable per user.
 
 ## Screenshots
 
-![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-1.png)
-![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-2.png)
-![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-3.png)
-![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-4.png)
+![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-1.webp)
+![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-2.webp)
+![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-3.webp)
+![](https://larazeus.com/images/screenshots/dynamic-dashboard/admin-4.webp)
 
 ## More Details
 
