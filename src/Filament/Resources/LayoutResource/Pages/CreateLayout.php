@@ -37,7 +37,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
     {
         if ($record === null) {
             $layoutModel = DynamicDashboardPlugin::get()->getModel('Layout');
-            $this->dashLayout = new $layoutModel();
+            $this->dashLayout = new $layoutModel;
             foreach (DynamicDashboardPlugin::get()->getModel('Columns')::all() as $column) {
                 $this->{'widgetsFrom' . $column->key}->fill([
                     'widgetsData.' . $column->key => [],

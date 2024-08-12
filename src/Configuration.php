@@ -40,7 +40,7 @@ trait Configuration
     {
         return array_merge(
             config('zeus-dynamic-dashboard.models'),
-            (new static())::get()->getModels()
+            (new static)::get()->getModels()
         )[$model];
     }
 

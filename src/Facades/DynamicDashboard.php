@@ -21,7 +21,7 @@ class DynamicDashboard extends Facade
         $classes = [];
         $path = array_unique(Arr::wrap($path));
 
-        foreach ((new Finder())->in($path)->files() as $className) {
+        foreach ((new Finder)->in($path)->files() as $className) {
             $classes[] = $namespace . $className->getFilenameWithoutExtension();
         }
 
@@ -75,7 +75,7 @@ class DynamicDashboard extends Facade
         $allWidgets = [];
 
         foreach ($classes as $widget) {
-            $widgetClass = new $widget();
+            $widgetClass = new $widget;
 
             if ($widgetClass instanceof Widget && $widgetClass->enabled()) {
                 $allWidgets[] = $widgetClass->form();
