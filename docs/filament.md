@@ -23,7 +23,7 @@ dynamic widgets for your dashboard, customizable per user.
 
 **✨ to learn more about Dynamic Dashboard the form builder, please visit:**
 
-- [Discord](https://discord.com/channels/883083792112300104/1184784836154634270)
+- [Discord](https://discord.com/channels/883083792112300104/1282761874009493655)
 - [Docs](https://larazeus.com/docs/dynamic-dashboard)
 - [Github](https://github.com/lara-zeus/dynamic-dashboard)
 - [Demo](https://demo.larazeus.com/dynamic-dashboard)

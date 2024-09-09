@@ -54,7 +54,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 available support channels:
 * open an issue on [GitHub](https://github.com/lara-zeus/dynamic-dashboard/issues)
 * email us using the [contact center](https://larazeus.com/contact-us)
-* join [Discord](https://discord.com/channels/883083792112300104/1184784836154634270)
+* join [Discord](https://discord.com/channels/883083792112300104/1282761874009493655)
 
 ## Contributing
 
@@ -66,7 +66,7 @@ If you discover any security related issues, please email info@larazeus.com inst
 
 ## Credits
 
--   [php coder](https://github.com/atmonshi)
+-   [Lara Zeus (Ash)](https://github.com/atmonshi)
 -   [All Contributors](../../contributors)
 
 ## License
