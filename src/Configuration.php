@@ -14,15 +14,21 @@ trait Configuration
     /**
      * set the default upload options.
      */
-    protected Closure | string $defaultLayout = 'new-page';
+    protected Closure|string $defaultLayout = 'new-page';
 
-    protected Closure | string $uploadDisk = 'public';
+    protected Closure|string $uploadDisk = 'public';
 
-    protected Closure | string $uploadDirectory = 'layouts';
+    protected Closure|string $uploadDirectory = 'layouts';
 
-    protected Closure | string $navigationGroupLabel = 'Dynamic Dashboard';
+    protected Closure|string $resourceLabel = 'Dashboard';
 
-    protected Closure | bool $hideLayoutResource = false;
+    protected Closure|string $resourcePluralLabel = 'Dashboards';
+
+    protected Closure|string $navigationLabel = 'Dashboard';
+
+    protected Closure|string $navigationGroupLabel = 'Dynamic Dashboard';
+
+    protected Closure|bool $hideLayoutResource = false;
 
     public function models(array $models): static
     {
@@ -44,62 +50,98 @@ trait Configuration
         )[$model];
     }
 
-    public function defaultLayout(Closure | string $layout): static
+    public function defaultLayout(Closure|string $layout): static
     {
         $this->defaultLayout = $layout;
 
         return $this;
     }
 
-    public function getDefaultLayout(): Closure | string
+    public function getDefaultLayout(): Closure|string
     {
         return $this->evaluate($this->defaultLayout);
     }
 
-    public function uploadDisk(Closure | string $disk): static
+    public function uploadDisk(Closure|string $disk): static
     {
         $this->uploadDisk = $disk;
 
         return $this;
     }
 
-    public function getUploadDisk(): Closure | string
+    public function getUploadDisk(): Closure|string
     {
         return $this->evaluate($this->uploadDisk);
     }
 
-    public function uploadDirectory(Closure | string $dir): static
+    public function uploadDirectory(Closure|string $dir): static
     {
         $this->uploadDirectory = $dir;
 
         return $this;
     }
 
-    public function getUploadDirectory(): Closure | string
+    public function getUploadDirectory(): Closure|string
     {
         return $this->evaluate($this->uploadDirectory);
     }
 
-    public function navigationGroupLabel(Closure | string $lable): static
+    public function resourceLabel(Closure|string $label): static
     {
-        $this->navigationGroupLabel = $lable;
+        $this->resourceLabel = $label;
 
         return $this;
     }
 
-    public function getNavigationGroupLabel(): Closure | string
+    public function getResourceLabel(): Closure|string
+    {
+        return $this->evaluate($this->resourceLabel);
+    }
+
+    public function resourcePluralLabel(Closure|string $label): static
+    {
+        $this->resourcePluralLabel = $label;
+
+        return $this;
+    }
+
+    public function getResourcePluralLabel(): Closure|string
+    {
+        return $this->evaluate($this->resourcePluralLabel);
+    }
+
+    public function navigationLabel(Closure|string $label): static
+    {
+        $this->navigationLabel = $label;
+
+        return $this;
+    }
+
+    public function getNavigationLabel(): Closure|string
+    {
+        return $this->evaluate($this->navigationLabel);
+    }
+
+    public function navigationGroupLabel(Closure|string $label): static
+    {
+        $this->navigationGroupLabel = $label;
+
+        return $this;
+    }
+
+    public function getNavigationGroupLabel(): Closure|string
     {
         return $this->evaluate($this->navigationGroupLabel);
     }
 
-    public function hideLayoutResource(Closure | bool $condition = true): static
+    public function hideLayoutResource(Closure|bool $condition = true): static
     {
         $this->hideLayoutResource = $condition;
 
         return $this;
     }
 
-    public function isLayoutResourceHidden(): Closure | bool
+    public function isLayoutResourceHidden(): Closure|bool
     {
         return $this->evaluate($this->hideLayoutResource);
     }

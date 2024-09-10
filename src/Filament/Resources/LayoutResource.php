@@ -83,17 +83,17 @@ class LayoutResource extends Resource
 
     public static function getLabel(): string
     {
-        return __('Dashboard');
+        return DynamicDashboardPlugin::get()->getResourceLabel();
     }
 
     public static function getPluralLabel(): string
     {
-        return __('Dashboards');
+        return DynamicDashboardPlugin::get()->getResourcePluralLabel();
     }
 
     public static function getNavigationLabel(): string
     {
-        return __('Dashboards');
+        return DynamicDashboardPlugin::get()->getNavigationLabel();
     }
 
     public static function getNavigationGroup(): ?string
