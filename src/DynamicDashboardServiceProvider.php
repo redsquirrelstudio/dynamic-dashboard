@@ -21,6 +21,15 @@ class DynamicDashboardServiceProvider extends PackageServiceProvider
         Livewire::component('landing', Layouts::class);
     }
 
+    public function packageRegistered(): void
+    {
+        parent::packageRegistered();
+
+        $this->app->scoped('dynamic-dashboard', function (): DynamicDashboardPlugin {
+            return new DynamicDashboardPlugin ;
+        });
+    }
+
     public function configurePackage(Package $package): void
     {
         $package
