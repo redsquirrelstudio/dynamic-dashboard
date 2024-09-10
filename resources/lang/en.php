@@ -19,7 +19,7 @@ return [
     "slug" => "slug",
     "create_layout" => "create layout",
     "edit_layout" => "edit layout",
-    "Image" => "Image",
+    "image" => "Image",
     "image_alt_text" => "image alt text",
     "options" => "options",
     "optional" => "optional",
@@ -38,4 +38,6 @@ return [
     "title_and_slug" => "Title & Slug",
     "view_layout" => "View Layout",
     'is_active' => 'Is Active',
+    'dashboard' => 'Dashboard',
+    'dashboards' => 'Dashboards',
 ];

@@ -21,7 +21,14 @@ class DynamicDashboardServiceProvider extends PackageServiceProvider
         Livewire::component('landing', Layouts::class);
     }
 
-    public function configurePackage(Package $package): void
+    public function packageRegistered(): void
+    {
+        $this->app->scoped('zeus-dynamic-dashboard', function (): DynamicDashboardPlugin {
+            return new DynamicDashboardPlugin;
+        });
+    }
+
+        public function configurePackage(Package $package): void
     {
         $package
             ->name(static::$name)

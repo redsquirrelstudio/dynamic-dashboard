@@ -38,4 +38,6 @@ return [
     "title_and_slug" => "العنوان والرابط",
     "view_layout" => "عرض القالب",
     'is_active' => 'نشط',
+    'dashboard' => 'لوحة القيادة',
+    'dashboards' => 'لوحات المعلومات',
 ];
