@@ -25,7 +25,6 @@ class DynamicDashboardServiceProvider extends PackageServiceProvider
     {
         $package
             ->name(static::$name)
-            ->hasTranslations()
             ->hasConfigFile()
             ->hasCommands(static::getCommands())
             ->hasMigrations([
@@ -34,6 +33,10 @@ class DynamicDashboardServiceProvider extends PackageServiceProvider
             ])
             ->hasViews('zeus')
             ->hasRoute('web');
+
+        if (file_exists($package->basePath('/../resources/lang'))) {
+            $package->hasTranslations();
+        }
     }
 
     protected function getCommands(): array
