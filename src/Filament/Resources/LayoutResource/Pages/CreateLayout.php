@@ -80,7 +80,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
 
     public function getTitle(): string
     {
-        return __('create dashboard');
+        return __('zeus-dynamic-dashboard::dynamic-dashboard.create_dashboard');
     }
 
     protected function getBlocksForms(string $key): array
@@ -93,7 +93,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
                 ->collapsible()
                 ->cloneable()
                 ->reorderableWithButtons(false)
-                ->addActionLabel(__('add dashboard'))
+                ->addActionLabel(__('zeus-dynamic-dashboard::dynamic-dashboard.add_dashboard'))
                 ->blocks(DynamicDashboard::available()),
         ];
     }
@@ -105,7 +105,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
                 ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.title_and_slug'))
                 ->schema([
                     TextInput::make('dashLayout.layout_title')
-                        ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.dashboard_title'))
+                        ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.title'))
                         ->live(onBlur: true)
                         ->required()
                         ->afterStateUpdated(function (Forms\Set $set, $state) {
@@ -117,7 +117,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
                         }),
                     TextInput::make('dashLayout.layout_slug')
                         ->required()
-                        ->label(__('zeus-dynamic-dashboard.slug')),
+                        ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.slug')),
                 ]),
         ];
     }
@@ -153,7 +153,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
         $this->dashLayout->save();
 
         Notification::make()
-            ->title(__('saved successfully'))
+            ->title(__('zeus-dynamic-dashboard::dynamic-dashboard.saved_successfully'))
             ->success()
             ->send();
 

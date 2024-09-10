@@ -19,12 +19,12 @@ class FormsWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
     public function form(): Builder\Block
     {
         return Builder\Block::make('Forms')
-            ->label(__('Forms'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.forms'))
             ->schema([
                 Tabs::make('Forms_tabs')
                     ->schema([
                         Tabs\Tab::make('Forms')
-                            ->label(__('Forms'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.forms'))
                             ->schema([
                                 Select::make('form_slug')
                                     ->required()

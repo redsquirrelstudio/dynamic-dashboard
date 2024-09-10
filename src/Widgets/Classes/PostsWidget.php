@@ -28,34 +28,35 @@ class PostsWidget implements Widget
                 Tabs::make('posts_tabs')
                     ->schema([
                         Tabs\Tab::make('posts')
-                            ->label(__('Posts'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.posts'))
                             ->schema([
                                 TextInput::make('limit')
                                     ->numeric()
                                     ->default(5),
                                 Select::make('orderBy')
                                     ->options([
-                                        'id' => __('id'),
-                                        'created_at' => __('created at'),
-                                        'published_at' => __('published at'),
+                                        'id' => __('zeus-dynamic-dashboard::dynamic-dashboard.id'),
+                                        'created_at' => __('zeus-dynamic-dashboard::dynamic-dashboard.created_at'),
+                                        'published_at' => __('zeus-dynamic-dashboard::dynamic-dashboard.published_at'),
                                     ])
                                     ->default('id'),
                                 Select::make('orderDir')
-                                    ->label(__('order direction'))
+                                    ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.order_direction'))
                                     ->options([
-                                        'asc' => __('asc'),
-                                        'desc' => __('desc'),
+                                        'asc' => __('zeus-dynamic-dashboard::dynamic-dashboard.asc'),
+                                        'desc' => __('zeus-dynamic-dashboard::dynamic-dashboard.desc'),
                                     ])
                                     ->default('desc'),
 
                                 Select::make('category')
+                                    ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.category'))
                                     // @phpstan-ignore-next-line
                                     ->options(config('zeus-sky.models.Tag')::query()
                                         ->withType('category')
                                         ->pluck('name', 'id')),
 
-                                Toggle::make('show_thumbnail')->label(__('show thumbnail')),
-                                Toggle::make('show_description')->label(__('show description')),
+                                Toggle::make('show_thumbnail')->label(__('zeus-dynamic-dashboard::dynamic-dashboard.show_thumbnail')),
+                                Toggle::make('show_description')->label(__('zeus-dynamic-dashboard::dynamic-dashboard.show_description')),
                             ]),
                         $this->defaultOptionsTab(),
                     ]),

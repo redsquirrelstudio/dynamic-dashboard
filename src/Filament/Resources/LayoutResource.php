@@ -62,7 +62,7 @@ class LayoutResource extends Resource
 
                     Action::make('show')
                         ->color('warning')
-                        ->label(__('View Dashboard'))
+                        ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.view_dashboard'))
                         ->icon('heroicon-o-arrow-top-right-on-square')
                         ->tooltip(__('zeus-dynamic-dashboard::dynamic-dashboard.view_dashboard'))
                         ->url(fn ($record): string => route('landing-page', $record->layout_slug))

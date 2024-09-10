@@ -14,15 +14,15 @@ class HeadingWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
     public function form(): Builder\Block
     {
         return Builder\Block::make('paragraph')
-            ->label(__('Paragraph'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.paragraph'))
             ->schema([
                 Tabs::make('paragraph_tabs')
                     ->schema([
                         Tabs\Tab::make('paragraph')
-                            ->label(__('Paragraph'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.paragraph'))
                             ->schema([
                                 MarkdownEditor::make('content')
-                                    ->label(__('content'))
+                                    ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.content'))
                                     ->required(),
                             ]),
                         $this->defaultOptionsTab(),

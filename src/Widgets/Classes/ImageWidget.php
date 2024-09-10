@@ -16,15 +16,15 @@ class ImageWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
     public function form(): Builder\Block
     {
         return Builder\Block::make('image')
-            ->label(__('Image'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.image'))
             ->schema([
                 Tabs::make('image_tabs')
                     ->schema([
                         Tabs\Tab::make('image')
-                            ->label(__('Image'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.image'))
                             ->schema([
                                 FileUpload::make('url')
-                                    ->label(__('Image'))
+                                    ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.image'))
                                     ->disk(DynamicDashboardPlugin::get()->getUploadDisk())
                                     ->directory(DynamicDashboardPlugin::get()->getUploadDirectory())
                                     ->image()
@@ -32,7 +32,7 @@ class ImageWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
                                     ->required(),
 
                                 TextInput::make('alt')
-                                    ->label(__('image alt text'))
+                                    ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.image_alt_text'))
                                     ->required(),
                             ]),
 

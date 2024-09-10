@@ -43,13 +43,13 @@ trait InteractWithWidgets
     public function defaultOptionsTab(): Tab
     {
         return Tab::make('options')
-            ->label(__('options'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.options'))
             ->schema([
                 TextInput::make('title')
-                    ->helperText(__('optional'))
-                    ->label(__('widget title'))
+                    ->helperText(__('zeus-dynamic-dashboard::dynamic-dashboard.optional'))
+                    ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.widget_title'))
                     ->nullable(),
-                TextInput::make('sort')->default(1)->label(__('order')),
+                TextInput::make('sort')->default(1)->label(__('zeus-dynamic-dashboard::dynamic-dashboard.order')),
                 Hidden::make('widget')->default(get_called_class()),
             ]);
     }

@@ -20,14 +20,14 @@ class LibraryWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
     public function form(): Builder\Block
     {
         return Builder\Block::make('Library')
-            ->label(__('Library'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.library'))
             ->schema([
                 Tabs::make('Library_tabs')
                     ->schema([
                         Tabs\Tab::make('Library')
-                            ->label(__('Library'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.library'))
                             ->schema([
-                                Select::make('library_slug')
+                                Select::make('zeus-dynamic-dashboard::dynamic-dashboard.library_slug')
                                     ->required()
                                     ->options(
                                         // @phpstan-ignore-next-line

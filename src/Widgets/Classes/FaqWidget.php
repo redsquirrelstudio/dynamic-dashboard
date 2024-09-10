@@ -20,12 +20,12 @@ class FaqWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
     public function form(): Builder\Block
     {
         return Builder\Block::make('Faq')
-            ->label(__('Faq'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.faq'))
             ->schema([
                 Tabs::make('Faq_tabs')
                     ->schema([
                         Tabs\Tab::make('Faq')
-                            ->label(__('Faq'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.faq'))
                             ->schema([
                                 Select::make('faq_cat')
                                     ->required()

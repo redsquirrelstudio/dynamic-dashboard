@@ -20,14 +20,15 @@ class MenuWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
     public function form(): Builder\Block
     {
         return Builder\Block::make('Menu')
-            ->label(__('Menu'))
+            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.menu'))
             ->schema([
                 Tabs::make('Menu_tabs')
                     ->schema([
                         Tabs\Tab::make('Menu')
-                            ->label(__('Menu'))
+                            ->label(__('zeus-dynamic-dashboard::dynamic-dashboard.menu'))
                             ->schema([
                                 Select::make('menu_slug')
+                                    ->label('zeus-dynamic-dashboard::dynamic-dashboard.menu_slug')
                                     ->required()
                                     ->options(
                                         // @phpstan-ignore-next-line
@@ -36,8 +37,8 @@ class MenuWidget implements \LaraZeus\DynamicDashboard\Contracts\Widget
                                 Select::make('menu_dir')
                                     ->default('vertical')
                                     ->options([
-                                        'vertical' => __('vertical'),
-                                        'horizontal' => __('horizontal'),
+                                        'vertical' => __('zeus-dynamic-dashboard::dynamic-dashboard.vertical'),
+                                        'horizontal' => __('zeus-dynamic-dashboard::dynamic-dashboard.horizontal'),
                                     ]),
                             ]),
                         $this->defaultOptionsTab(),
