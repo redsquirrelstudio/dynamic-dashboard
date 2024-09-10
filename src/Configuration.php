@@ -82,17 +82,17 @@ trait Configuration
 
     public function getResourceLabel(): Closure|string
     {
-        return __('dynamic-dashboard.dashboard');
+        return __('zeus-dynamic-dashboard.dashboard');
     }
 
     public function getResourcePluralLabel(): Closure|string
     {
-        return __('dynamic-dashboard.dashboards');
+        return __('zeus-dynamic-dashboard.dashboards');
     }
 
     public function getNavigationLabel(): string
     {
-        return __('dynamic-dashboard.dashboard');
+        return __('zeus-dynamic-dashboard.dashboard');
     }
 
     public function navigationGroupLabel(Closure|string $label): static
