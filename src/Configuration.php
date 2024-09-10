@@ -28,6 +28,21 @@ trait Configuration
 
     protected Closure|string $navigationGroupLabel = 'Dynamic Dashboard';
 
+    protected Closure|array $columnLabels = [
+        'layout_title' => 'Title',
+        'slug' => 'Slug',
+        'is_active' => "Is Active",
+        'user' => 'User'
+    ];
+
+    protected Closure|array $actionLabels = [
+        'edit' => 'Edit',
+        'show' => 'Show',
+        'delete' => 'Delete',
+        'view' => 'View',
+        'view_form' => 'View form',
+    ];
+
     protected Closure|bool $hideLayoutResource = false;
 
     public function models(array $models): static

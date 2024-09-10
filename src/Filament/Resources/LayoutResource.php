@@ -37,37 +37,37 @@ class LayoutResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('title')),
+                    ->label(__('dynamic_dashboards.title')),
                 TextColumn::make('layout_slug')
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('slug')),
+                    ->label(__('dynamic_dashboards.slug')),
 
                 ToggleColumn::make('is_active')
                     ->toggleable()
-                    ->label(__('is active')),
+                    ->label(__('dynamic_dashboards.is_active')),
 
                 TextColumn::make('user.name')
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('user')),
+                    ->label(__('dynamic_dashboards.user')),
             ])
             ->defaultSort('id', 'desc')
             ->actions([
                 ActionGroup::make([
                     EditAction::make('edit')
-                        ->label(__('Edit')),
+                        ->label(__('dynamic_dashboards.edit')),
 
                     Action::make('show')
                         ->color('warning')
                         ->label(__('View Dashboard'))
                         ->icon('heroicon-o-arrow-top-right-on-square')
-                        ->tooltip(__('view Dashboard'))
+                        ->tooltip(__('dynamic_dashboards.view_dashboard'))
                         ->url(fn ($record): string => route('landing-page', $record->layout_slug))
                         ->openUrlInNewTab(),
-                    DeleteAction::make('delete')->label(__('Delete')),
+                    DeleteAction::make('delete')->label(__('dynamic_dashboards.delete')),
                 ]),
             ]);
     }
