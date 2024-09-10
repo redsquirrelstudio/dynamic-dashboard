@@ -102,10 +102,10 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
     {
         return [
             Fieldset::make('mainComponents')
-                ->label(__('dynamic_dashboards.title_and_slug'))
+                ->label(__('dynamic-dashboard.title_and_slug'))
                 ->schema([
                     TextInput::make('dashLayout.layout_title')
-                        ->label(__('dynamic_dashboards.dashboard_title'))
+                        ->label(__('dynamic-dashboard.dashboard_title'))
                         ->live(onBlur: true)
                         ->required()
                         ->afterStateUpdated(function (Forms\Set $set, $state) {
@@ -117,7 +117,7 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
                         }),
                     TextInput::make('dashLayout.layout_slug')
                         ->required()
-                        ->label(__('dynamic_dashboards.slug')),
+                        ->label(__('dynamic-dashboard.slug')),
                 ]),
         ];
     }

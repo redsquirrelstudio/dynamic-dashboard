@@ -37,37 +37,37 @@ class LayoutResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('dynamic_dashboards.title')),
+                    ->label(__('dynamic-dashboard.title')),
                 TextColumn::make('layout_slug')
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('dynamic_dashboards.slug')),
+                    ->label(__('dynamic-dashboard.slug')),
 
                 ToggleColumn::make('is_active')
                     ->toggleable()
-                    ->label(__('dynamic_dashboards.is_active')),
+                    ->label(__('dynamic-dashboard.is_active')),
 
                 TextColumn::make('user.name')
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('dynamic_dashboards.user')),
+                    ->label(__('dynamic-dashboard.user')),
             ])
             ->defaultSort('id', 'desc')
             ->actions([
                 ActionGroup::make([
                     EditAction::make('edit')
-                        ->label(__('dynamic_dashboards.edit')),
+                        ->label(__('dynamic-dashboard.edit')),
 
                     Action::make('show')
                         ->color('warning')
                         ->label(__('View Dashboard'))
                         ->icon('heroicon-o-arrow-top-right-on-square')
-                        ->tooltip(__('dynamic_dashboards.view_dashboard'))
+                        ->tooltip(__('dynamic-dashboard.view_dashboard'))
                         ->url(fn ($record): string => route('landing-page', $record->layout_slug))
                         ->openUrlInNewTab(),
-                    DeleteAction::make('delete')->label(__('dynamic_dashboards.delete')),
+                    DeleteAction::make('delete')->label(__('dynamic-dashboard.delete')),
                 ]),
             ]);
     }

@@ -20,28 +20,7 @@ trait Configuration
 
     protected Closure|string $uploadDirectory = 'layouts';
 
-    protected Closure|string $resourceLabel = 'Dashboard';
-
-    protected Closure|string $resourcePluralLabel = 'Dashboards';
-
-    protected Closure|string $navigationLabel = 'Dashboard';
-
     protected Closure|string $navigationGroupLabel = 'Dynamic Dashboard';
-
-    protected Closure|array $columnLabels = [
-        'layout_title' => 'Title',
-        'slug' => 'Slug',
-        'is_active' => "Is Active",
-        'user' => 'User'
-    ];
-
-    protected Closure|array $actionLabels = [
-        'edit' => 'Edit',
-        'show' => 'Show',
-        'delete' => 'Delete',
-        'view' => 'View',
-        'view_form' => 'View form',
-    ];
 
     protected Closure|bool $hideLayoutResource = false;
 
@@ -101,40 +80,19 @@ trait Configuration
         return $this->evaluate($this->uploadDirectory);
     }
 
-    public function resourceLabel(Closure|string $label): static
-    {
-        $this->resourceLabel = $label;
-
-        return $this;
-    }
-
     public function getResourceLabel(): Closure|string
     {
-        return $this->evaluate($this->resourceLabel);
-    }
-
-    public function resourcePluralLabel(Closure|string $label): static
-    {
-        $this->resourcePluralLabel = $label;
-
-        return $this;
+        return __('dynamic-dashboard.dashboard');
     }
 
     public function getResourcePluralLabel(): Closure|string
     {
-        return $this->evaluate($this->resourcePluralLabel);
+        return __('dynamic-dashboard.dashboards');
     }
 
-    public function navigationLabel(Closure|string $label): static
+    public function getNavigationLabel(): string
     {
-        $this->navigationLabel = $label;
-
-        return $this;
-    }
-
-    public function getNavigationLabel(): Closure|string
-    {
-        return $this->evaluate($this->navigationLabel);
+        return __('dynamic-dashboard.dashboard');
     }
 
     public function navigationGroupLabel(Closure|string $label): static
