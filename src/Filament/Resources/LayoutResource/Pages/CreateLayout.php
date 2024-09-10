@@ -102,10 +102,10 @@ class CreateLayout extends Page implements Forms\Contracts\HasForms
     {
         return [
             Fieldset::make('mainComponents')
-                ->label(__('zeus-dynamic-dashboard.title_and_slug'))
+                ->label(__('zeus-dynamic-dashboard::title_and_slug'))
                 ->schema([
                     TextInput::make('dashLayout.layout_title')
-                        ->label(__('zeus-dynamic-dashboard.dashboard_title'))
+                        ->label(__('zeus-dynamic-dashboard::dashboard_title'))
                         ->live(onBlur: true)
                         ->required()
                         ->afterStateUpdated(function (Forms\Set $set, $state) {

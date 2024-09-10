@@ -37,37 +37,37 @@ class LayoutResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('zeus-dynamic-dashboard.title')),
+                    ->label(__('zeus-dynamic-dashboard::title')),
                 TextColumn::make('layout_slug')
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('zeus-dynamic-dashboard.slug')),
+                    ->label(__('zeus-dynamic-dashboard::slug')),
 
                 ToggleColumn::make('is_active')
                     ->toggleable()
-                    ->label(__('zeus-dynamic-dashboard.is_active')),
+                    ->label(__('zeus-dynamic-dashboard::is_active')),
 
                 TextColumn::make('user.name')
                     ->sortable()
                     ->searchable()
                     ->toggleable()
-                    ->label(__('zeus-dynamic-dashboard.user')),
+                    ->label(__('zeus-dynamic-dashboard::user')),
             ])
             ->defaultSort('id', 'desc')
             ->actions([
                 ActionGroup::make([
                     EditAction::make('edit')
-                        ->label(__('zeus-dynamic-dashboard.edit')),
+                        ->label(__('zeus-dynamic-dashboard::edit')),
 
                     Action::make('show')
                         ->color('warning')
                         ->label(__('View Dashboard'))
                         ->icon('heroicon-o-arrow-top-right-on-square')
-                        ->tooltip(__('zeus-dynamic-dashboard.view_dashboard'))
+                        ->tooltip(__('zeus-dynamic-dashboard::view_dashboard'))
                         ->url(fn ($record): string => route('landing-page', $record->layout_slug))
                         ->openUrlInNewTab(),
-                    DeleteAction::make('delete')->label(__('zeus-dynamic-dashboard.delete')),
+                    DeleteAction::make('delete')->label(__('zeus-dynamic-dashboard::delete')),
                 ]),
             ]);
     }
